@@ -1,0 +1,8 @@
+### Environment Variables ###
+.env
+.env.*
+*.env
+
+
+con_db_pd_online.php
+con_db.php
