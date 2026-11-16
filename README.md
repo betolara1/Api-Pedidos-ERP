@@ -56,12 +56,14 @@ flowchart TD
 * **Campos Utilizados**:
   * `num_pedido`: Número do pedido (5 dígitos)
   * `txt_cliente_nome`: Nome/Razão Social do cliente
+  * `txt_cliente_endereco`, `txt_cliente_bairro`, `txt_cliente_cidade`, `txt_cliente_cep`: Dados opcionais de endereço do cliente
 
 ### 2. Banco IBM DB2 (ERP Promob / Bartz)
 * **Tabela**: `pedido`
 * **Campos Utilizados**:
   * `nro_pedido`: Código do pedido no ERP
-  * `observacao_5`: Campo de observação preenchido no formato `Nome Cliente: [nome do cliente]` recuperado do MySQL
+  * `observacao_5`: Campo de observação preenchido no formato `Nome Cliente: [nome do cliente]` recuperado do MySQL (obrigatório)
+  * `observacao_4`: Campo de observação preenchido no formato `Endereço: [endereço completo]` recuperado do MySQL (opcional, quando preenchido no MySQL)
 
 ### 3. Regra dos 6 Dígitos
 Alguns pedidos chegam ao ERP com 6 dígitos iniciando com o número `5` (exemplo: `512345`), enquanto no MySQL eles estão cadastrados com 5 dígitos (`12345`).
